@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html style="font-size: 14px;">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link id="appStyleMode" rel="stylesheet" href="">
+    <script>
+
+        let link = `./node_modules/primereact/resources/themes/`;
+        if( localStorage.getItem('mode-type') === 'null' ){
+            link += `bootstrap4-dark-blue`;
+        }else{
+            link += localStorage.getItem('mode-type');
+        }
+        link += '/theme.css';
+
+        document.getElementById('appStyleMode').setAttribute('href', link);
+
+    </script>
+
+</head>
+<body>
+    <div id="root"></div>
+    <script src="./build/js/app.js"></script> 
+</body>
+</html>
